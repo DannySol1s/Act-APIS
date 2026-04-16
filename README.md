@@ -1,43 +1,49 @@
-# Svelte + Vite
+# Act-APIS: Explorador de APIs 🚀
 
-This template should help get you started developing with Svelte in Vite.
+Bienvenido al proyecto **Act-APIS**, una aplicación web Front-End interactiva construida para demostrar la integración y consumo de múltiples APIs públicas utilizando tecnologías modernas y eficientes.
 
-## Recommended IDE Setup
+## 🌟 Características Principales
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+- **Consumo de Múltiples APIs:** Integración con *Dog API*, *RandomUser API* y *PokeAPI*.
+- **Tecnología Moderna:** Construido con **Svelte** y **Vite**, ofreciendo un rendimiento excepcional y tiempos de carga instantáneos sin utilizar Virtual DOM tradicional.
+- **Diseño Glassmorphism:** Creado con **Vanilla CSS**, presenta una interfaz de usuario "premium" y vanguardista utilizando efectos de desenfoque y transparencias que simulan paneles de cristal.
+- **Manejo de Asincronía:** Uso de bloques nativos de Svelte (`{#await}`) para gestionar los estados de carga y error de manera eficiente y nativa.
 
-## Need an official Svelte framework?
+## 📚 Documentación Completa
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+Para una explicación detallada sobre los objetivos de la actividad, la justificación de las tecnologías elegidas y la explicación de la arquitectura (separación de responsabilidades), por favor revisa el archivo de documentación principal:
 
-## Technical considerations
+👉 **[Leer DOCUMENTACION.md](./DOCUMENTACION.md)**
 
-**Why use this over SvelteKit?**
+## 🛠️ Instalación y Configuración Local
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+Sigue estos pasos para levantar el entorno de desarrollo en tu máquina:
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+1. **Clonar el repositorio:**
+   ```bash
+   git clone <url-del-repositorio>
+   cd Act-APIS
+   ```
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+2. **Instalar las dependencias:**
+   Asegúrate de tener [Node.js](https://nodejs.org/) instalado y ejecuta:
+   ```bash
+   npm install
+   ```
 
-**Why include `.vscode/extensions.json`?**
+3. **Iniciar el servidor de desarrollo:**
+   ```bash
+   npm run dev
+   ```
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+4. **Abrir la aplicación:**
+   Abre tu navegador web y entra a la dirección `http://localhost:5173/` (o la que se proporcione en la terminal).
 
-**Why enable `checkJs` in the JS template?**
+## 🗂 Estructura del Proyecto
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+El código fuente principal se encuentra de forma ordenada en la carpeta `/src/`:
+- `/services` - Lógica y llamadas a las APIs externas (`api.js`).
+- `/components` - Componentes visuales genéricos y reutilizables (`GlassCard.svelte`...).
+- `/views` - Vistas que conectan los servicios y los componentes de visualización.
+- `App.svelte` - Componente principal y orquestador del estado activo.
+- `app.css` - Estilos globales, animaciones y paleta de colores.
