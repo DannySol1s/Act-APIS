@@ -1,49 +1,74 @@
-# Act-APIS: Explorador de APIs 🚀
+# 🚀 Ecosistema Multi-API (Monorepo)
 
-Bienvenido al proyecto **Act-APIS**, una aplicación web Front-End interactiva construida para demostrar la integración y consumo de múltiples APIs públicas utilizando tecnologías modernas y eficientes.
+![Svelte](https://img.shields.io/badge/Svelte-FF3E00?style=for-the-badge&logo=svelte&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
+![SvelteKit](https://img.shields.io/badge/SvelteKit-FF3E00?style=for-the-badge&logo=svelte&logoColor=white)
+![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
 
-## 🌟 Características Principales
+Este es un proyecto educativo avanzado diseñado para demostrar la integración y orquestación de múltiples servicios construidos en diferentes ecosistemas, todos consolidados en una interfaz moderna y fluida.
 
-- **Consumo de Múltiples APIs:** Integración con *Dog API*, *RandomUser API* y *PokeAPI*.
-- **Tecnología Moderna:** Construido con **Svelte** y **Vite**, ofreciendo un rendimiento excepcional y tiempos de carga instantáneos sin utilizar Virtual DOM tradicional.
-- **Diseño Glassmorphism:** Creado con **Vanilla CSS**, presenta una interfaz de usuario "premium" y vanguardista utilizando efectos de desenfoque y transparencias que simulan paneles de cristal.
-- **Manejo de Asincronía:** Uso de bloques nativos de Svelte (`{#await}`) para gestionar los estados de carga y error de manera eficiente y nativa.
+---
 
-## 📚 Documentación Completa
+## 📁 Arquitectura del Ecosistema
 
-Para una explicación detallada sobre los objetivos de la actividad, la justificación de las tecnologías elegidas y la explicación de la arquitectura (separación de responsabilidades), por favor revisa el archivo de documentación principal:
+El proyecto utiliza una estructura de **Monorepo** para gestionar dinámicamente cada servicio:
 
-👉 **[Leer DOCUMENTACION.md](./DOCUMENTACION.md)**
+### 🎨 [Frontend (Svelte 5)](./frontend-svelte)
+*   **Tecnología:** Svelte 5 + Vite + Vanilla CSS.
+*   **Función:** Dashboard central que consume y visualiza datos de todos los microservicios locales.
 
-## 🛠️ Instalación y Configuración Local
+### 🐍 [API Python (FastAPI)](./api-python) ➡️ **RandomUser API**
+*   **Descripción:** *"Datos de usuarios simulados. Ideal para llenar directorios y construir tarjetas de perfiles de ejemplo."*
+*   **Puerto Local:** `http://localhost:8000`
+*   **Servicio Externo:** [RandomUser](https://randomuser.me/)
 
-Sigue estos pasos para levantar el entorno de desarrollo en tu máquina:
+### ⚡ [API SvelteKit](./api-sveltekit) ➡️ **PokeAPI**
+*   **Descripción:** *"La enciclopedia Pokémon en tu bolsillo. Consulta sprites, tipos y estadísticas en tiempo real."*
+*   **Puerto Local:** `http://localhost:5000`
+*   **Servicio Externo:** [PokeAPI](https://pokeapi.co/)
 
-1. **Clonar el repositorio:**
-   ```bash
-   git clone <url-del-repositorio>
-   cd Act-APIS
-   ```
+### 🐹 [API Go (Golang)](./api-go) ➡️ **Dog API**
+*   **Descripción:** *"Generador infinito de amigos peludos. Un API perfecto para explorar razas y aleatoriedad."*
+*   **Puerto Local:** `http://localhost:9000`
+*   **Servicio Externo:** [Dog API](https://dog.ceo/dog-api/)
 
-2. **Instalar las dependencias:**
-   Asegúrate de tener [Node.js](https://nodejs.org/) instalado y ejecuta:
-   ```bash
-   npm install
-   ```
+---
 
-3. **Iniciar el servidor de desarrollo:**
-   ```bash
-   npm run dev
-   ```
+## 🚀 Guía de Inicio Rápido
 
-4. **Abrir la aplicación:**
-   Abre tu navegador web y entra a la dirección `http://localhost:5173/` (o la que se proporcione en la terminal).
+Sigue estos pasos para levantar el ecosistema completo en tu entorno local:
 
-## 🗂 Estructura del Proyecto
+### 1. Frontend (Svelte)
+```bash
+cd frontend-svelte
+npm install
+npm run dev
+```
 
-El código fuente principal se encuentra de forma ordenada en la carpeta `/src/`:
-- `/services` - Lógica y llamadas a las APIs externas (`api.js`).
-- `/components` - Componentes visuales genéricos y reutilizables (`GlassCard.svelte`...).
-- `/views` - Vistas que conectan los servicios y los componentes de visualización.
-- `App.svelte` - Componente principal y orquestador del estado activo.
-- `app.css` - Estilos globales, animaciones y paleta de colores.
+### 2. API Python (FastAPI) ➡️ RandomUser API
+```bash
+cd api-python
+pip install -r requirements.txt
+python -m uvicorn main:app --reload
+```
+
+### 3. API SvelteKit ➡️ PokeAPI
+```bash
+cd api-sveltekit
+npm install --legacy-peer-deps
+npm run dev
+```
+
+### 4. API Go ➡️ Dog API
+```bash
+cd api-go
+go run main.go
+```
+
+---
+
+## 📄 Documentación y Recursos
+Para un análisis profundo sobre la arquitectura, manejo de CORS y decisiones de diseño, consulta nuestro archivo de [DOCUMENTACION.md](./DOCUMENTACION.md).
+
+---
+*Desarrollado con ❤️ para demostrar el poder de la poliglotía en el desarrollo web.*
